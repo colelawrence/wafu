@@ -76,15 +76,13 @@ export const defaultOptions: Readonly<WafuOptions> = {
   matchAllTokens: false
 };
 
-/** TextEncoder isn't showing up, so this is just providing the type definition. */
-interface TextEncoder {
-  readonly encoding: string;
-  encode(input?: string): Uint8Array;
-}
-declare var TextEncoder: {
-  prototype: TextEncoder;
-  new (): TextEncoder;
-};
+// /** TextEncoder isn't showing up, so this is just providing the type definition. */
+// interface TextEncoder {
+//   readonly encoding: string;
+//   encode(input?: string): Uint8Array;
+// }
+
+import { TextEncoder } from 'util'
 
 const cachedTextEncoder = new TextEncoder();
 function jsonEncode(v: any): Uint8Array {

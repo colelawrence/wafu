@@ -4,7 +4,7 @@ echo 'Clearing wafu_pkg/dist...'
 rm -rf wafu_pkg/dist/*
 
 echo 'Building rust code...'
-(cd wafu_rs && wasm-pack build)
+(cd wafu_rs && wasm-pack build --target nodejs)
 
 echo 'Building typescript code...'
 (cd wafu_pkg && npm run build)
